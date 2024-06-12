@@ -5,4 +5,5 @@ export interface IImage {
   height: number;
   src: string | StaticImageData;
   alt: string;
+  url?: string;
 }
