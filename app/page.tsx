@@ -6,8 +6,8 @@ import TextArea from "@/components/shared/common/inputs/TextArea";
 import { IconTest2 } from "@/components/icons";
 import RadioButton from "@/components/shared/common/buttons/RadioButton";
 import { useState } from "react";
-import Pagination from "@/components/Pagination";
-import Spinner from "@/components/shared/Spinner";
+import Pagination from "@/components/shared/common/Pagination";
+import Spinner from "@/components/shared/common/Spinner";
 
 export default function Home() {
   const [checked, setChecked] = useState(false);

@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { twMerge } from "tailwind-merge";
 import { DOTS, usePagination } from "@/hooks/usePagination";
 import Button from "@/components/shared/common/buttons/Button";
-import IconButton from "./shared/common/buttons/IconButton";
+import IconButton from "@/components/shared/common/buttons/IconButton";
 import { IconAngleLeft, IconAngleRight } from "@/components/icons";
 
 type PaginationChangePage = (page: number, totalRows: number) => void;
