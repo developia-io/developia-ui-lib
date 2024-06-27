@@ -1,7 +1,7 @@
-import { useMemo } from 'react';
-import { PaginationComponentProps } from '@/components/common/Pagination';
+import { useMemo } from "react";
+import { PaginationComponentProps } from "@/components/shared/common/Pagination";
 
-export const DOTS = '...';
+export const DOTS = "...";
 
 const range = (start: number, end: number) => {
   const length = end - start + 1;

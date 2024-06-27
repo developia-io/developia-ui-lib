@@ -14,7 +14,9 @@ export default function Home() {
   const [currentPage, setCurrentPage] = useState(1);
   return (
     <main className="flex min-h-screen flex-col  gap-8 p-24">
-      <Button variant="outlined" color="primary" children="test" />
+      <Button variant="outlined" color="primary">
+        Test
+      </Button>
       <Input
         onChange={() => console.log("a")}
         placeholder="test"
