@@ -1,7 +1,6 @@
 {
-  "name": "developia-ui-lib",
+  "name": "@developia.io/developia-ui-lib",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -32,5 +31,20 @@
     "./inputs/*": "./components/shared/common/inputs/*.tsx",
     "./layout/*": "./components/shared/common/layout/*.tsx",
     "./*": "./components/shared/common/*.tsx"
-  }
+  },
+  "description": "Developia-ui-lib",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/developia-io/developia-ui-lib.git"
+  },
+  "keywords": [
+    "ui-lib"
+  ],
+  "author": "developia.io",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/developia-io/developia-ui-lib/issues"
+  },
+  "homepage": "https://github.com/developia-io/developia-ui-lib#readme"
 }
