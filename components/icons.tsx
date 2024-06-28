@@ -1,5 +1,5 @@
-export { default as IconTest } from "@/public/vercel.svg";
-export { default as IconTest2 } from "@/public/next.svg";
-export { default as IconsCheck } from "@/public/IconCheck.svg";
-export { default as IconAngleLeft } from "@/public/IconAngleLeft.svg";
-export { default as IconAngleRight } from "@/public/IconAngleRight.svg";
+export const IconTest = require("@/public/vercel.svg").default;
+export const IconTest2 = require("@/public/next.svg").default;
+export const IconsCheck = require("@/public/IconCheck.svg").default;
+export const IconAngleLeft = require("@/public/IconAngleLeft.svg").default;
+export const IconAngleRight = require("@/public/IconAngleRight.svg").default;
