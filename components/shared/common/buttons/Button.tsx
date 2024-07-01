@@ -1,9 +1,9 @@
-import { IImage } from "@/components/interface";
+import type { IImage } from "@/components/interface";
 import clsx from "clsx";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 
-type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   as?: React.ElementType;
   variant?: "primary" | "secondary" | "text" | "outlined" | "link";
   color?: "primary" | "secondary";
@@ -26,7 +26,7 @@ const Button = ({
   prevIcon,
   nextIcon,
   ...rest
-}: Props) => {
+}: ButtonProps) => {
   return (
     <Cmp
       {...rest}
