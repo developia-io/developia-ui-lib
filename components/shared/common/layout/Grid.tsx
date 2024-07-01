@@ -7,3 +7,5 @@ type ContainerProps = {
 export const Container = ({ className }: ContainerProps) => {
   return <div></div>;
 };
+
+export default Container;
