@@ -17,6 +17,7 @@ type ItemType = {
   // Diğer veri tipleri buraya eklenebilir
 };
 import NavList, { Orientation } from "@/components/shared/common/NavList";
+import Datepicker from "@/components/shared/common/datepicker/Datepicker";
 
 export default function Home() {
   const [checked, setChecked] = useState(false);
@@ -120,6 +121,8 @@ export default function Home() {
           orientation={Orientation.Horizantal}
         />
       </div>
+
+      <Datepicker />
     </main>
   );
 }

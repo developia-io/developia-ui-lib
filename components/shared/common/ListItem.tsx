@@ -1,4 +1,5 @@
 "use client";
+import { IconAngleRight } from "@/components/icons";
 import clsx from "clsx";
 import Link from "next/link";
 import {
@@ -9,7 +10,6 @@ import {
   type MutableRefObject,
   type RefObject,
 } from "react";
-import { FaArrowRight } from "react-icons/fa";
 
 const useHover = () => {
   const [isHovering, setIsHovering] = useState(false);
@@ -125,7 +125,7 @@ export default function ListItem({
             style={{ marginLeft: `${arrowMargin}px` }}
             className="invisible group-hover/link:visible transition-all duration-700 ease-out"
           >
-            <FaArrowRight />
+            <IconAngleRight />
           </div>
         )}
       </li>
