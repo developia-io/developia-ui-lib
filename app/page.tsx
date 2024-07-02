@@ -8,8 +8,7 @@ import RadioButton from "@/components/shared/common/buttons/RadioButton";
 import { useEffect, useState } from "react";
 import Pagination from "@/components/shared/common/Pagination";
 import Spinner from "@/components/shared/common/Spinner";
-import NavList from "@/components/shared/common/NavList";
-import PaginatedTable from "@/components/shared/common/Table";
+
 import Table from "@/components/shared/common/Table";
 type ItemType = {
   name: string;
@@ -17,6 +16,7 @@ type ItemType = {
   phone: string;
   // Diğer veri tipleri buraya eklenebilir
 };
+import NavList, { Orientation } from "@/components/shared/common/NavList";
 
 export default function Home() {
   const [checked, setChecked] = useState(false);
@@ -46,7 +46,13 @@ export default function Home() {
 
   const fetchData = async (page: number) => {
     try {
-      setData(dataMock);
+      setData(
+        dataMock.map((item) => ({
+          name: item.name + page.toString(),
+          email: item.email,
+          phone: item.phone,
+        }))
+      );
       setTotalPages(totalPagesMock);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -68,7 +74,6 @@ export default function Home() {
         required={true}
       />
       <TextArea placeholder="test" />
-
       <RadioButton
         checked={checked}
         onChange={() => {
@@ -77,26 +82,7 @@ export default function Home() {
       />
 
       <Spinner className="w-8 h-8" />
-      <NavList
-        items={[
-          {
-            title: { name: "test", link: "" },
-            list: [
-              { name: "test", link: "" },
-              { name: "test", link: "" },
-            ],
-          },
-          {
-            title: { name: "test2", link: "" },
-            list: [
-              { name: "test2", link: "" },
-              { name: "test2", link: "" },
-            ],
-          },
-        ]}
-        isHeaderNavList={true}
-        isHeaderScrolled={false}
-      />
+
       <Table
         columns={columns}
         data={data}
@@ -105,6 +91,35 @@ export default function Home() {
         rowsPerPage={8}
         onChangePage={(page) => setCurrentPage(page)}
       />
+
+      <div className="flex flex-row gap-16">
+        <NavList
+          items={[
+            {
+              title: { name: "Horizantal Nav List Test Title", link: "" },
+              list: [
+                { name: "Test", link: "" },
+                { name: "Test 2", link: "" },
+                { name: "Test 3", link: "" },
+              ],
+            },
+          ]}
+          orientation={Orientation.Horizantal}
+        />
+        <NavList
+          items={[
+            {
+              title: { name: "Test 2", link: "" },
+              list: [
+                { name: "test", link: "" },
+                { name: "test", link: "" },
+                { name: "test", link: "" },
+              ],
+            },
+          ]}
+          orientation={Orientation.Horizantal}
+        />
+      </div>
     </main>
   );
 }
