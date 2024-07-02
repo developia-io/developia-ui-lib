@@ -6,31 +6,30 @@ import Button from "@/components/shared/common/buttons/Button";
 import IconButton from "@/components/shared/common/buttons/IconButton";
 import { IconAngleLeft, IconAngleRight } from "@/components/icons";
 
-type PaginationChangePage = (page: number, totalRows: number) => void;
+type PaginationChangePage = (page: number, totalPagesCount: number) => void;
 
 type Props = {
-  rowsPerPage: number;
   className?: string;
-  rowCount: number;
   currentPage: number;
   onChangePage: PaginationChangePage;
+  totalPagesCount: number;
 };
 
 export type PaginationComponentProps = Props;
 
 const Pagination = (props: Props) => {
-  const { rowCount, onChangePage, className, currentPage } = props;
+  const { onChangePage, className, currentPage, totalPagesCount } = props;
 
   const paginationRange = usePagination(props);
 
   const handlePrevious = useCallback(
-    () => onChangePage(Number(currentPage) - 1, rowCount),
-    [currentPage, onChangePage, rowCount]
+    () => onChangePage(Number(currentPage) - 1, totalPagesCount),
+    [currentPage, onChangePage]
   );
 
   const handleNext = useCallback(
-    () => onChangePage(Number(currentPage) + 1, rowCount),
-    [currentPage, onChangePage, rowCount]
+    () => onChangePage(Number(currentPage) + 1, totalPagesCount),
+    [currentPage, onChangePage]
   );
 
   return (
@@ -57,11 +56,11 @@ const Pagination = (props: Props) => {
         ) : (
           <button
             key={index}
-            onClick={() => onChangePage(Number(item), rowCount)}
+            onClick={() => onChangePage(Number(item), totalPagesCount)}
             className={clsx(
               "rounded-2xl w-8 h-8 font-semibold text-blue800 hover:bg-blue800 hover:text-white",
               {
-                "bg-blue800 text-white": currentPage === item,
+                "bg-blue-800 text-white": currentPage === item,
               }
             )}
           >
@@ -72,7 +71,7 @@ const Pagination = (props: Props) => {
 
       <IconButton
         variant="outline"
-        disabled={currentPage === rowCount}
+        disabled={currentPage === totalPagesCount}
         className="text-blue800 p-0"
         onClick={handleNext}
       >
