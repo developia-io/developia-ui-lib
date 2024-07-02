@@ -8,6 +8,7 @@ import RadioButton from "@/components/shared/common/buttons/RadioButton";
 import { useState } from "react";
 import Pagination from "@/components/shared/common/Pagination";
 import Spinner from "@/components/shared/common/Spinner";
+import NavList from "@/components/shared/common/NavList";
 
 export default function Home() {
   const [checked, setChecked] = useState(false);
@@ -37,6 +38,26 @@ export default function Home() {
         rowsPerPage={10}
       />
       <Spinner className="w-8 h-8" />
+      <NavList
+        items={[
+          {
+            title: { name: "test", link: "" },
+            list: [
+              { name: "test", link: "" },
+              { name: "test", link: "" },
+            ],
+          },
+          {
+            title: { name: "test2", link: "" },
+            list: [
+              { name: "test2", link: "" },
+              { name: "test2", link: "" },
+            ],
+          },
+        ]}
+        isHeaderNavList={true}
+        isHeaderScrolled={false}
+      />
     </main>
   );
 }
