@@ -8,7 +8,7 @@ import RadioButton from "@/components/shared/common/buttons/RadioButton";
 import { useState } from "react";
 import Pagination from "@/components/shared/common/Pagination";
 import Spinner from "@/components/shared/common/Spinner";
-import NavList from "@/components/shared/common/NavList";
+import NavList, { Orientation } from "@/components/shared/common/NavList";
 
 export default function Home() {
   const [checked, setChecked] = useState(false);
@@ -24,7 +24,6 @@ export default function Home() {
         required={true}
       />
       <TextArea placeholder="test" />
-
       <RadioButton
         checked={checked}
         onChange={() => {
@@ -55,7 +54,35 @@ export default function Home() {
             ],
           },
         ]}
-      />
+      />{" "}
+      <div className="flex flex-row gap-16">
+        <NavList
+          items={[
+            {
+              title: { name: "Horizantal Nav List Test Title", link: "" },
+              list: [
+                { name: "Test", link: "" },
+                { name: "Test 2", link: "" },
+                { name: "Test 3", link: "" },
+              ],
+            },
+          ]}
+          orientation={Orientation.Horizantal}
+        />
+        <NavList
+          items={[
+            {
+              title: { name: "Test 2", link: "" },
+              list: [
+                { name: "test", link: "" },
+                { name: "test", link: "" },
+                { name: "test", link: "" },
+              ],
+            },
+          ]}
+          orientation={Orientation.Horizantal}
+        />
+      </div>
     </main>
   );
 }

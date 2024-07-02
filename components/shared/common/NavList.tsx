@@ -8,6 +8,7 @@ interface NavListProps {
   items: NavListItem[];
   underlineIndex?: number;
   underlineSubIndex?: number;
+  orientation?: Orientation;
   className?: string;
 }
 
@@ -22,15 +23,21 @@ export interface ListItem {
   disabled?: boolean;
 }
 
+export enum Orientation {
+  Horizantal = 0,
+  Vertical = 1,
+}
+
 export default function NavList({
   items,
   underlineIndex,
   underlineSubIndex,
+  orientation = 1,
   className,
 }: NavListProps) {
   const [showList, setShowList] = useState(-1);
 
-  return (
+  return orientation ? (
     <div className={"flex w-full h-min justify-center select-none "}>
       {items.map((item, index) => (
         <div
@@ -85,6 +92,40 @@ export default function NavList({
           )}
         </div>
       ))}
+    </div>
+  ) : (
+    <div className="flex flex-col gap-6">
+      {items.map((subItem, index) => {
+        return (
+          <div key={index} className="flex flex-col justify-between  gap-6">
+            <Link
+              href={subItem.title.link}
+              className={clsx(
+                "text-white text-lg font-bold uppercase leading-snug hover:underline hover:decoration-current  underline-offset-4 ",
+                subItem.title.disabled && "pointer-events-none"
+              )}
+              aria-disabled={subItem.title.disabled === false}
+            >
+              {subItem.title.name}
+            </Link>
+            {subItem.list?.length > 0 && (
+              <div className="flex flex-col gap-2  ">
+                {subItem.list.map((subSubItem) => {
+                  return (
+                    <div key={subSubItem.name}>
+                      <Link href={subSubItem.link}>
+                        <span className=" text-center text-natural_50 text-lg font-normal hover:transition-all hover:duration-300 hover:text-helper_White  ease-in-out">
+                          {subSubItem.name}
+                        </span>
+                      </Link>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }
