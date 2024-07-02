@@ -55,8 +55,6 @@ export default function Home() {
             ],
           },
         ]}
-        isHeaderNavList={true}
-        isHeaderScrolled={false}
       />
     </main>
   );
