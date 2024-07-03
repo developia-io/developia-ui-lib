@@ -3,7 +3,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   as?: React.ElementType;
   variant?: "primary" | "secondary" | "text" | "outlined" | "link";
   color?: "primary" | "secondary";
