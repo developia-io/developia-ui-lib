@@ -23,7 +23,7 @@ export default function Home() {
   const [checked, setChecked] = useState(false);
   // const [currentPage, setCurrentPage] = useState(1);
   const columns = [
-    { id: "name", label: "Name" },
+    { id: "name", label: "Name", sortable: true },
     { id: "email", label: "Email" },
     { id: "phone", label: "Phone" },
   ];
