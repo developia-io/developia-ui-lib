@@ -37,6 +37,50 @@ const meta: Meta<ButtonProps> = {
       },
     },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: `
+          The Button component is used for various actions in the application.
+
+          **Primary Button:**
+          \`\`\`jsx
+          import { Button } from './Button';
+
+          <Button variant="primary">Primary Button</Button>
+          \`\`\`
+
+          **Secondary Button:**
+          \`\`\`jsx
+          import { Button } from './Button';
+
+          <Button variant="secondary">Secondary Button</Button>
+          \`\`\`
+
+          **Text Button:**
+          \`\`\`jsx
+          import { Button } from './Button';
+
+          <Button variant="text">Text Button</Button>
+          \`\`\`
+
+          **Outlined Button:**
+          \`\`\`jsx
+          import { Button } from './Button';
+
+          <Button variant="outlined">Outlined Button</Button>
+          \`\`\`
+
+          **Link Button:**
+          \`\`\`jsx
+          import { Button } from './Button';
+
+          <Button variant="link">Link Button</Button>
+          \`\`\`
+        `,
+      },
+    },
+  },
 };
 export default meta;
 
@@ -95,7 +139,7 @@ export const Loading: Story = {
   },
 };
 
-// Örnek bir ikon tanımlaması
+// Example icon definition
 const exampleIcon: IImage = {
   src: IconAngleLeft,
   alt: "Example Icon",
