@@ -1,22 +1,51 @@
 module.exports = {
-	content: [
-		"./pages/**/*.{js,ts,jsx,tsx,mdx}",
-		"./components/**/*.{js,ts,jsx,tsx,mdx}",
-		"./app/**/*.{js,ts,jsx,tsx,mdx}",
-	],
-	theme: {
-		extend: {
-			backgroundImage: {
-				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-				"gradient-conic":
-					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-			},
-			colors: {
-				"button-primary": "#2ad9f7",
-				"button-secondary": "#2ad9f7",
-				"button-text-primary": "#fff",
-				"button-text-secondary": "#ccc",
-			},
-		},
-	},
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      colors: {
+        primary_100: "#001731",
+        primary_90: "#002e62",
+        primary_80: "#004493",
+        primary_70: "#005bc4",
+        primary_60: "#006FEE",
+        primary_50: "#338ef7",
+        primary_40: "#66aaf9",
+        primary_30: "#99c7fb",
+        primary_20: "#cce3fd",
+        primary_10: "#e6f1fe",
+        secondary_100: "#180828",
+        secondary_90: "#301050",
+        secondary_80: "#481878",
+        secondary_70: "#6020a0",
+        secondary_60: "#7828c8",
+        secondary_50: "#9353d3",
+        secondary_40: "#ae7ede",
+        secondary_30: "#c9a9e9",
+        secondary_20: "#e4d4f4",
+        secondary_10: "#f2eafa",
+        neutral_100: "#18181B",
+        neutral_90: "#27272A",
+        neutral_80: "#3F3F46",
+        neutral_70: "#52525B",
+        neutral_60: "#71717A",
+        neutral_50: "#A1A1AA",
+        neutral_40: "#D4D4D8",
+        neutral_30: "#E4E4E7",
+        neutral_20: "#F4F4F5",
+        neutral_10: "#FAFAFA",
+        helper_White: "#FFFFFF",
+        helper_Black: "#000000",
+      },
+    },
+  },
+  plugins: [],
 };

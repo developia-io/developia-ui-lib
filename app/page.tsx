@@ -66,7 +66,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col  gap-8 p-24">
-      <Button variant="outlined" color="primary">
+      <Button variant="outlined" colorvariant="primary">
         Test
       </Button>
       <Input
