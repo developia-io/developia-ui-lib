@@ -1,0 +1,96 @@
+import { Meta, Primary, Controls, Story, Source } from "@storybook/blocks";
+import * as CardStories from "./Card.stories";
+
+<Meta of={CardStories} />
+
+# Card
+
+The `Card` component is a versatile container for displaying content. It supports different variants, customizations, and layouts.
+
+<Primary />
+
+## Props
+
+<Controls />
+
+## Stories
+
+### Custom Content Card
+
+This story showcases a `Card` with custom content inside.
+
+<Story of={CardStories.CustomContent} />
+
+<Source of={CardStories.CustomContent} />
+
+### Filled Square Card
+
+This story displays a `Card` that is filled and has square corners.
+
+<Story of={CardStories.FilledSquare} />
+
+<Source of={CardStories.FilledSquare} />
+
+### Card with Image
+
+This example shows a `Card` containing an image.
+
+<Story of={CardStories.WithImage} />
+
+<Source of={CardStories.WithImage} />
+
+### Card with Custom Class
+
+An example of a `Card` using custom classes for styling.
+
+<Story of={CardStories.CustomClass} />
+
+<Source of={CardStories.CustomClass} />
+
+### All Props Example
+
+This story demonstrates the use of all props available in the `Card` component.
+
+<Story of={CardStories.AllProps} />
+
+<Source of={CardStories.AllProps} />
+
+### Horizontal Layout Card
+
+A `Card` with a horizontal layout using `flex` properties.
+
+<Story of={CardStories.HorizontalLayout} />
+
+<Source of={CardStories.HorizontalLayout} />
+
+### Vertical Layout Card
+
+This story shows a `Card` with a vertical layout.
+
+<Story of={CardStories.VerticalLayout} />
+
+<Source of={CardStories.VerticalLayout} />
+
+### Outlined Card
+
+A simple outlined `Card` example.
+
+<Story of={CardStories.Outlined} />
+
+<Source of={CardStories.Outlined} />
+
+### Transparent Card
+
+An example of a `Card` with a transparent background.
+
+<Story of={CardStories.Transparent} />
+
+<Source of={CardStories.Transparent} />
+
+### Transparent Card with Image
+
+A `Card` that is transparent and includes an image.
+
+<Story of={CardStories.TransparentWithImage} />
+
+<Source of={CardStories.TransparentWithImage} />
