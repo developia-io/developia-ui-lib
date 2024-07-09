@@ -18,6 +18,7 @@ type ItemType = {
 };
 import NavList, { Orientation } from "@/components/shared/common/NavList";
 import Datepicker from "@/components/shared/common/datepicker/Datepicker";
+import Dropdown from "@/components/shared/common/Dropdown";
 
 export default function Home() {
   const [checked, setChecked] = useState(false);
@@ -66,7 +67,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col  gap-8 p-24">
-      <Button variant="outlined" colorvariant="primary">
+      <Button variant="outlined" colorvariant="primary" radius="rounded">
         Test
       </Button>
       <Input
@@ -123,6 +124,14 @@ export default function Home() {
       </div>
 
       <Datepicker />
+      <Dropdown
+      title="Menu"
+      items={[
+        { name: "Item 1", link: "/item1" },
+        { name: "Item 2", link: "/item2" },
+      ]}
+  radius="rounded" 
+/>
     </main>
   );
 }

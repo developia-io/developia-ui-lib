@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
+import { IconAngleDown } from "@/components/icons";
 import clsx from "clsx";
 import Link from "next/link";
 
@@ -11,30 +11,41 @@ type DropdownItem = {
 type DropdownProps = {
   title: string;
   items: DropdownItem[];
+  radius?: "rounded" | "square";
 };
 
-const Dropdown = ({ title, items }: DropdownProps) => {
+const Dropdown = ({ title, items, radius = "rounded" }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="relative">
       <button
         type="button"
-        className="flex justify-between items-center w-full px-4 py-2 bg-primary_80 text-helper_White"
+        className={clsx(
+          "flex justify-between items-center w-full px-4 py-2 bg-primary_80 text-helper_White",
+          {
+            "rounded-lg": radius === "rounded",
+            "rounded-none": radius === "square",
+          }
+        )}
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
       >
         <span className="font-bold">{title}</span>
-        {isOpen ? (
-          <FaChevronUp className="text-helper_White" />
-        ) : (
-          <FaChevronDown className="text-helper_White" />
-        )}
+        <IconAngleDown
+          className={clsx("text-helper_White transform transition-transform", {
+            "rotate-180": isOpen,
+          })}
+        />
       </button>
       <div
         className={clsx(
           "absolute left-0 right-0 mt-2 py-2 bg-primary_80",
-          { hidden: !isOpen }
+          {
+            hidden: !isOpen,
+            "rounded-lg": radius === "rounded",
+            "rounded-none": radius === "square",
+          }
         )}
       >
         {items.map((item) => (
@@ -52,3 +63,4 @@ const Dropdown = ({ title, items }: DropdownProps) => {
 };
 
 export default Dropdown;
+

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 import Spinner from "../Spinner";
 
-type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   as?: React.ElementType;
   variant?: "filled" | "text" | "outlined" | "link";
   colorvariant?: "primary" | "secondary" | "custom";
@@ -17,6 +17,7 @@ type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   customBgColor?: string;
   customBorderColor?: string;
   customTextColor?: string;
+  radius?: "rounded" | "square";
 };
 
 const Button = ({
@@ -24,6 +25,7 @@ const Button = ({
   children,
   variant = "filled",
   colorvariant = "primary",
+  radius = "rounded",
   customBgColor,
   customBorderColor,
   customTextColor,
@@ -33,7 +35,7 @@ const Button = ({
   prevIcon,
   nextIcon,
   ...rest
-}: Props) => {
+}: ButtonProps) => {
   return (
     <Cmp
       {...rest}
@@ -42,9 +44,9 @@ const Button = ({
         clsx("py-[11px] px-6 rounded font-semibold leading-none", {
           ...(variant === "filled"
             ? {
-                "bg-primary_100 text-helper_White":
+                "bg-primary_80 text-helper_White":
                   colorvariant === "primary",
-                "bg-secondary_100 text-neutral_20":
+                "bg-secondary_70 text-neutral_20":
                   colorvariant === "secondary",
               }
             : null),
@@ -78,7 +80,8 @@ const Button = ({
             ? {
                 "pointer-events-none opacity-80 justify-center": true,
               }
-            : null),...(customBgColor || customBorderColor || customTextColor
+            : null),
+            ...(customBgColor || customBorderColor || customTextColor
               ? {
                   [`bg-[${customBgColor}]`]: customBgColor,
                   [`border-[${customBorderColor}]`]: customBorderColor,
@@ -89,6 +92,17 @@ const Button = ({
                   [`${colorvariant}`]: colorvariant,
                 }
               : null),
+              ...(radius === "rounded" 
+                ? {
+                  "rounded-lg":true
+                }
+                :null),
+                ...(radius === "square" 
+                  ? {
+                    "rounded-none":true
+                  }
+                  :null
+              )
             
         }),
         className
@@ -113,7 +127,7 @@ const Button = ({
           alt={nextIcon.alt}
           className="w-4 h-4"
         />
-      )},
+      )}
     </Cmp>
   );
 };
