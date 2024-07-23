@@ -11,10 +11,10 @@ const meta: Meta<ButtonProps> = {
     variant: {
       control: {
         type: "select",
-        options: ["primary", "secondary", "text", "outlined", "link"],
+        options: ["filled", "text", "outlined", "link"],
       },
     },
-    color: {
+    colorvariant: {
       control: {
         type: "select",
         options: ["primary", "secondary"],
@@ -43,18 +43,14 @@ const meta: Meta<ButtonProps> = {
         component: `
           The Button component is used for various actions in the application.
 
-          **Primary Button:**
+          **Filled Button:**
           \`\`\`jsx
           import { Button } from './Button';
 
-          <Button variant="primary">Primary Button</Button>
+          <Button variant="filled", color=primary >Primary Filled Button</Button>
           \`\`\`
 
-          **Secondary Button:**
-          \`\`\`jsx
-          import { Button } from './Button';
-
-          <Button variant="secondary">Secondary Button</Button>
+          <Button variant="filled", color=secondary >Secondary Filled Button</Button>
           \`\`\`
 
           **Text Button:**
@@ -86,19 +82,19 @@ export default meta;
 
 type Story = StoryObj<ButtonProps>;
 
-export const Primary: Story = {
+export const Filled: Story = {
   args: {
-    children: "Primary Button",
-    variant: "primary",
-    color: "primary",
+    children: "Primary Filled Button",
+    variant: "filled",
+    colorvariant: "primary",
   },
 };
 
-export const Secondary: Story = {
+export const SecondaryFilled: Story = {
   args: {
-    children: "Secondary Button",
-    variant: "secondary",
-    color: "secondary",
+    children: "Secondary Filled Button",
+    variant: "filled",
+    colorvariant: "secondary",
   },
 };
 
@@ -126,7 +122,7 @@ export const Link: Story = {
 export const Disabled: Story = {
   args: {
     children: "Disabled Button",
-    variant: "primary",
+    variant: "filled",
     disabled: true,
   },
 };
@@ -134,7 +130,7 @@ export const Disabled: Story = {
 export const Loading: Story = {
   args: {
     children: "Loading Button",
-    variant: "primary",
+    variant: "filled",
     loading: true,
   },
 };
@@ -150,7 +146,7 @@ const exampleIcon: IImage = {
 export const WithPrevIcon: Story = {
   args: {
     children: "Button with Prev Icon",
-    variant: "primary",
+    variant: "filled",
     prevIcon: exampleIcon,
   },
 };
@@ -158,7 +154,7 @@ export const WithPrevIcon: Story = {
 export const WithNextIcon: Story = {
   args: {
     children: "Button with Next Icon",
-    variant: "primary",
+    variant: "filled",
     nextIcon: exampleIcon,
   },
 };

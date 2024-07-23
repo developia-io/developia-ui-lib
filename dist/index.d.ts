@@ -12,7 +12,7 @@ interface IImage {
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
     as?: React.ElementType;
-    variant?: "primary" | "secondary" | "text" | "outlined" | "link";
+    variant?: "filled" | "text" | "outlined" | "link";
     color?: "primary" | "secondary";
     href?: string;
     [key: string]: any;
