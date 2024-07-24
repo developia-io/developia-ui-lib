@@ -1,4 +1,3 @@
-// src/components/shared/common/Card.tsx
 import React from "react";
 import clsx from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -25,7 +24,7 @@ const Card = ({
   variant = "outlined",
   radius = "rounded",
   customClass,
-  color,
+  color = "transparent",
   customBorderColor,
   customBgColor,
   customTextColor,
@@ -43,13 +42,15 @@ const Card = ({
       "rounded-none": radius === "square",
 
       // Colors
-      "bg-blue-100 text-blue-700 border-blue-300": color === "primary",
-      "bg-yellow-100 text-yellow-700 border-yellow-300 ": color === "secondary",
-      "bg-transparent border-transparent": color === "transparent",
+      "bg-primary_100 text-neutral_100 border-primary_100": color === "primary",
+      "bg-secondary_100 text-neutral_100 border-secondary_100":
+        color === "secondary",
+      "bg-transparent border-transparent text-neutral_100":
+        color === "transparent",
     },
     customBorderColor && `border ${customBorderColor}`, // Custom border color
-    customBgColor && `bg ${customBgColor}`, // Custom background color
-    customTextColor && `text ${customTextColor}`, // Custom text color
+    customBgColor && customBgColor, // Custom background color
+
     customClass // Custom classes
   );
 
@@ -68,8 +69,17 @@ const Card = ({
           })}
         />
       )}
-      <div className="flex flex-col gap-2">
-        {title && <h2 className="text-xl font-semibold">{title}</h2>}
+      <div className={clsx("flex flex-col gap-2", customTextColor)}>
+        {title && (
+          <h2
+            className={clsx(
+              "text-xl font-semibold text-neutral_70",
+              customTextColor
+            )}
+          >
+            {title}
+          </h2>
+        )}
         {paragraph && <p className="text-base">{paragraph}</p>}
       </div>
       {children}

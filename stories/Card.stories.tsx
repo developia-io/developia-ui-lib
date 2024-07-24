@@ -72,6 +72,7 @@ export const CustomContent: Story = {
     paragraph: "This card has custom content.",
     variant: "outlined",
     radius: "rounded",
+    color: "primary",
     customClass: "flex flex-col",
     customTextColor: "text-green-700",
   },
@@ -79,7 +80,7 @@ export const CustomContent: Story = {
     <Card {...args}>
       <div>
         <p>Custom paragraph inside card.</p>
-        <Button variant="primary" color="primary">
+        <Button variant="outlined" color="primary">
           Custom Button
         </Button>
       </div>
@@ -93,6 +94,8 @@ export const FilledSquare: Story = {
     paragraph: "This is a filled and square card.",
     variant: "filled",
     radius: "square",
+    color: "secondary",
+    customTextColor: "text-white",
   },
 };
 
@@ -119,18 +122,18 @@ export const AllProps: Story = {
     title: "All Props Example",
     imageSrc: "https://via.placeholder.com/150",
     paragraph: "This card demonstrates all props.",
-    variant: "filled",
+    // variant: "outlined",
     radius: "square",
     customClass: "text-center",
-    customBgColor: "bg-green-100",
-    customBorderColor: "border-green-500",
-    customTextColor: "text-green-800",
+    customBgColor: "bg-primary_80",
+    customBorderColor: "border-primary_80",
+    customTextColor: "text-neutral_50",
   },
   render: (args) => (
     <Card {...args}>
       <div className="flex flex-col items-center gap-4">
         <p>Custom content here</p>
-        <Button variant="primary" color="primary">
+        <Button variant="filled" color="primary">
           Action
         </Button>
       </div>
@@ -145,6 +148,7 @@ export const HorizontalLayout: Story = {
     variant: "outlined",
     radius: "rounded",
     customClass: "flex-row justify-between max-w-[700px]",
+    customTextColor: "!text-red-700",
   },
   render: (args) => (
     <Card {...args}>
@@ -153,7 +157,7 @@ export const HorizontalLayout: Story = {
           <p>Left side content</p>
         </div>
         <div className="flex-shrink">
-          <Button variant="primary" color="primary">
+          <Button variant="filled" color="primary">
             Button
           </Button>
         </div>
@@ -177,7 +181,7 @@ export const VerticalLayout: Story = {
           <p>Top content</p>
         </div>
         <div>
-          <Button variant="primary" color="primary">
+          <Button variant="outlined" color="primary">
             Button
           </Button>
         </div>
@@ -207,7 +211,7 @@ export const Transparent: Story = {
     <Card {...args}>
       <div>
         <p>Transparent cards are useful for overlay content.</p>
-        <Button variant="primary" color="primary">
+        <Button variant="filled" color="primary">
           Action
         </Button>
       </div>
