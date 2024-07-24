@@ -8,7 +8,8 @@ import RadioButton from "@/components/shared/common/buttons/RadioButton";
 import { useEffect, useState } from "react";
 import Pagination from "@/components/shared/common/Pagination";
 import Spinner from "@/components/shared/common/Spinner";
-
+import Stepper from "@/components/shared/common/Stepper";
+import Header from "@/components/shared/common/Header";
 import Table from "@/components/shared/common/Table";
 type ItemType = {
   name: string;
@@ -19,10 +20,39 @@ type ItemType = {
 import NavList, { Orientation } from "@/components/shared/common/NavList";
 import Datepicker from "@/components/shared/common/datepicker/Datepicker";
 import Dropdown from "@/components/shared/common/Dropdown";
+import Breadcrumb from "@/components/shared/common/Breadcrumb";
+import Checkbox from "@/components/shared/common/inputs/Checkbox";
+import ImageandText from "@/components/shared/common/ImageAndText";
 
 export default function Home() {
   const [checked, setChecked] = useState(false);
   // const [currentPage, setCurrentPage] = useState(1);
+  const [isChecked1, setIsChecked1] = useState(false);
+  const [isChecked2, setIsChecked2] = useState(false);
+
+  const handleCheckboxChange1 = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsChecked1(event.target.checked);
+  };
+
+  const handleCheckboxChange2 = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsChecked2(event.target.checked);
+  };
+  <Checkbox></Checkbox>
+  const breadcrumbItems = [
+    { title: 'Home', url: '/' },
+    { title: 'Dashboard', url: '/dashboard' },
+    { title: 'Settings', noTranslate: true },
+  ];
+  const steps = [
+    { title: 'Adım 1', subtitle: 'Alt başlık 1' },
+    { title: 'Adım 2', subtitle: 'Alt başlık 2' },
+    { title: 'Adım 3' }
+  ];
+  const dropdownItems = [
+    { name: "Item 1", link: "/item1" },
+    { name: "Item 2", link: "/item2" },
+    { name: "Item 3", link: "/item3" },
+  ];
   const columns = [
     { id: "name", label: "Name", sortable: true },
     { id: "email", label: "Email" },
@@ -64,9 +94,27 @@ export default function Home() {
   useEffect(() => {
     fetchData(currentPage);
   }, [currentPage]);
+  const navList = (
+  <ul className="flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0">
+      <li><a href="/" className="text-neutral_80 hover:text-neutral_100">Home</a></li>
+      <li><a href="/about" className="text-neutral_80 hover:text-neutral_100">About</a></li>
+      <li><a href="/contact" className="text-neutral_80 hover:text-neutral_100">Contact</a></li>
+    </ul>
+  );
+
+  const actions = (
+    <button className="px-4 py-2 bg-primary_60 text-helper_White rounded-md">Sign In</button>
+  );
 
   return (
     <main className="flex min-h-screen flex-col  gap-8 p-24">
+
+<Header 
+        navList={navList} 
+        actions={actions} 
+        logoPosition="left"
+      />
+      <Breadcrumb items={breadcrumbItems} />
       <Button variant="outlined" colorvariant="primary" radius="rounded">
         Test
       </Button>
@@ -84,7 +132,21 @@ export default function Home() {
       />
 
       <Spinner className="w-8 h-8" />
-
+      
+      <Checkbox
+        label="Accept Terms"
+        checked={isChecked1}
+        onChange={handleCheckboxChange1}
+      />
+      <Checkbox
+        label="Disabled Option"
+        checked={isChecked2}
+        onChange={handleCheckboxChange2}
+        disabled
+      />
+    
+      
+      <Stepper steps={steps} activeIndex={2} />
       <Table
         columns={columns}
         data={data}
@@ -132,6 +194,16 @@ export default function Home() {
       ]}
   radius="rounded" 
 />
+      
+<ImageandText
+        title="SVG Icon Example"
+        description="Rhoncus morbi et augue nec, in id ullamcorper at sit. Condimentum sit nunc in eros scelerisque sed. Commodo in viperra nunc, ullamcorper ut. Non, amet, aliquet scelerisque nullam sagittis, pulvinar. Fermentum scelerisque sit consectetur hac mi. Mollis leo eleifend ultricies purus aculis."
+        primaryActionText="Primary Action"
+        secondaryActionText="Secondary Action"
+        imagePosition="left"
+        className="my-custom-class"
+        useIconImage={true}
+      />
     </main>
   );
 }

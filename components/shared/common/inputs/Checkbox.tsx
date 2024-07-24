@@ -1,8 +1,7 @@
-
 import { forwardRef } from 'react';
 import clsx from 'clsx';
 import { twMerge } from 'tailwind-merge';
-import { IconsCheck } from "@/components/icons";
+import { IconCheck } from "@/components/icons";
 
 type Props = React.InputHTMLAttributes<HTMLInputElement> & {
   label?: React.ReactNode;
@@ -34,16 +33,16 @@ const Checkbox = (
       <span
         className={twMerge(
           clsx(
-            'inline-flex w-6 h-6 border flex-shrink-0 rounded text-white items-center justify-center',
+            'inline-flex w-6 h-6 border flex-shrink-0 rounded text-helper_White items-center justify-center',
             {
-              "bg-white border-gray-300": !checked,
-            "bg-blue-500 border-blue-500": checked,
+              "bg-helper_White border-neutral_30": !checked,
+              "bg-primary_50 border-primary_50": checked,
             }
           ),
           boxClassName
         )}
       >
-          {checked ? <IconsCheck width={18} height={18} /> : null}
+        {checked ? <IconCheck width={18} height={18} /> : null}
       </span>
       <input
         ref={ref}
