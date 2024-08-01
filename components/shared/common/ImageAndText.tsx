@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { IconImage } from "@/components/icons";
 import Button from "@/components/shared/common/buttons/Button";
 
-interface ImageandTextProps {
+export interface ImageandTextProps {
   imageSrc?: string;
   altText?: string;
   title: string;
@@ -33,7 +33,7 @@ const ImageandText: React.FC<ImageandTextProps> = ({
       className
     )}>
       <div className="w-full md:w-1/2 flex items-center justify-center overflow-hidden">
-      {useIconImage ? (
+        {useIconImage ? (
           <IconImage className="w-full h-auto object-contain" />
         ) : (
           <img src={imageSrc} alt={altText} className="w-full h-auto object-contain" />
@@ -52,4 +52,5 @@ const ImageandText: React.FC<ImageandTextProps> = ({
 };
 
 export default ImageandText;
+
 

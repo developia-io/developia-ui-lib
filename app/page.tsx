@@ -23,6 +23,7 @@ import Dropdown from "@/components/shared/common/Dropdown";
 import Breadcrumb from "@/components/shared/common/Breadcrumb";
 import Checkbox from "@/components/shared/common/inputs/Checkbox";
 import ImageandText from "@/components/shared/common/ImageAndText";
+import SearchBar from "@/components/shared/common/SearchBar";
 
 export default function Home() {
   const [checked, setChecked] = useState(false);
@@ -115,6 +116,7 @@ export default function Home() {
         logoPosition="left"
       />
       <Breadcrumb items={breadcrumbItems} />
+      <SearchBar radius="rounded" />
       <Button variant="outlined" colorvariant="primary" radius="rounded">
         Test
       </Button>
