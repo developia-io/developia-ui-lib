@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { IconHeaderLogo } from "@/components/icons";
 
-type HeaderProps = {
+export type HeaderProps = {
   logo?: React.ReactNode;
   navList?: React.ReactNode;
   actions?: React.ReactNode;

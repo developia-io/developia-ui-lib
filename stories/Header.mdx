@@ -1,0 +1,50 @@
+import { Meta, Primary, Controls, Story, Source } from "@storybook/blocks";
+import * as HeaderStories from "./Header.stories";
+
+<Meta of={HeaderStories} />
+
+# Header
+
+The header component is used for navigation and branding.
+
+<Primary />
+
+## Props
+
+<Controls />
+
+## Stories
+
+**Header with logo on the left:**
+
+<Story name="LogoLeft" of={HeaderStories.LogoLeft} parameters={{ args: { logoPosition: 'left' }}} />
+
+<Source name="LogoLeft" of={HeaderStories.LogoLeft} parameters={{ args: { logoPosition: 'left' }}} />
+
+**Header with logo in the center:**
+
+<Story name="LogoCenter" of={HeaderStories.LogoCenter} parameters={{ args: { logoPosition: 'center' }}} />
+
+<Source name="LogoCenter" of={HeaderStories.LogoCenter} parameters={{ args: { logoPosition: 'center' }}} />
+
+**Header with logo on the right:**
+
+<Story name="LogoRight" of={HeaderStories.LogoRight} parameters={{ args: { logoPosition: 'right' }}} />
+
+<Source name="LogoRight" of={HeaderStories.LogoRight} parameters={{ args: { logoPosition: 'right' }}} />
+
+### With Actions
+
+A header with action buttons.
+
+<Story of={HeaderStories.WithActions} />
+
+<Source of={HeaderStories.WithActions} />
+
+### Mobile Menu
+
+A header with a mobile menu.
+
+<Story of={HeaderStories.MobileMenu} />
+
+<Source of={HeaderStories.MobileMenu} />
