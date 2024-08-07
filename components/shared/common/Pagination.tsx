@@ -1,3 +1,5 @@
+"use client";
+
 import { useCallback } from "react";
 import clsx from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -80,4 +82,5 @@ const Pagination = (props: Props) => {
     </div>
   );
 };
+
 export default Pagination;
