@@ -24,6 +24,7 @@ import Breadcrumb from "@/components/shared/common/Breadcrumb";
 import Checkbox from "@/components/shared/common/inputs/Checkbox";
 import ImageandText from "@/components/shared/common/ImageAndText";
 import SearchBar from "@/components/shared/common/SearchBar";
+import Notification from "@/components/shared/common/Notification";
 
 export default function Home() {
   const [checked, setChecked] = useState(false);
@@ -31,23 +32,27 @@ export default function Home() {
   const [isChecked1, setIsChecked1] = useState(false);
   const [isChecked2, setIsChecked2] = useState(false);
 
-  const handleCheckboxChange1 = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCheckboxChange1 = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     setIsChecked1(event.target.checked);
   };
 
-  const handleCheckboxChange2 = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCheckboxChange2 = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     setIsChecked2(event.target.checked);
   };
-  <Checkbox></Checkbox>
+  <Checkbox></Checkbox>;
   const breadcrumbItems = [
-    { title: 'Home', url: '/' },
-    { title: 'Dashboard', url: '/dashboard' },
-    { title: 'Settings', noTranslate: true },
+    { title: "Home", url: "/" },
+    { title: "Dashboard", url: "/dashboard" },
+    { title: "Settings", noTranslate: true },
   ];
   const steps = [
-    { title: 'Adım 1', subtitle: 'Alt başlık 1' },
-    { title: 'Adım 2', subtitle: 'Alt başlık 2' },
-    { title: 'Adım 3' }
+    { title: "Adım 1", subtitle: "Alt başlık 1" },
+    { title: "Adım 2", subtitle: "Alt başlık 2" },
+    { title: "Adım 3" },
   ];
   const dropdownItems = [
     { name: "Item 1", link: "/item1" },
@@ -96,25 +101,34 @@ export default function Home() {
     fetchData(currentPage);
   }, [currentPage]);
   const navList = (
-  <ul className="flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0">
-      <li><a href="/" className="text-neutral_80 hover:text-neutral_100">Home</a></li>
-      <li><a href="/about" className="text-neutral_80 hover:text-neutral_100">About</a></li>
-      <li><a href="/contact" className="text-neutral_80 hover:text-neutral_100">Contact</a></li>
+    <ul className="flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0">
+      <li>
+        <a href="/" className="text-neutral_80 hover:text-neutral_100">
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="/about" className="text-neutral_80 hover:text-neutral_100">
+          About
+        </a>
+      </li>
+      <li>
+        <a href="/contact" className="text-neutral_80 hover:text-neutral_100">
+          Contact
+        </a>
+      </li>
     </ul>
   );
 
   const actions = (
-    <button className="px-4 py-2 bg-primary_60 text-helper_White rounded-md">Sign In</button>
+    <button className="px-4 py-2 bg-primary_60 text-helper_White rounded-md">
+      Sign In
+    </button>
   );
 
   return (
     <main className="flex min-h-screen flex-col  gap-8 p-24">
-
-<Header 
-        navList={navList} 
-        actions={actions} 
-        logoPosition="left"
-      />
+      <Header navList={navList} actions={actions} logoPosition="left" />
       <Breadcrumb items={breadcrumbItems} />
       <SearchBar radius="rounded" />
       <Button variant="outlined" colorvariant="primary" radius="rounded">
@@ -134,7 +148,7 @@ export default function Home() {
       />
 
       <Spinner className="w-8 h-8" />
-      
+
       <Checkbox
         label="Accept Terms"
         checked={isChecked1}
@@ -146,8 +160,7 @@ export default function Home() {
         onChange={handleCheckboxChange2}
         disabled
       />
-    
-      
+
       <Stepper steps={steps} activeIndex={2} />
       <Table
         columns={columns}
@@ -189,15 +202,15 @@ export default function Home() {
 
       <Datepicker />
       <Dropdown
-      title="Menu"
-      items={[
-        { name: "Item 1", link: "/item1" },
-        { name: "Item 2", link: "/item2" },
-      ]}
-  radius="rounded" 
-/>
-      
-<ImageandText
+        title="Menu"
+        items={[
+          { name: "Item 1", link: "/item1" },
+          { name: "Item 2", link: "/item2" },
+        ]}
+        radius="rounded"
+      />
+
+      <ImageandText
         title="SVG Icon Example"
         description="Rhoncus morbi et augue nec, in id ullamcorper at sit. Condimentum sit nunc in eros scelerisque sed. Commodo in viperra nunc, ullamcorper ut. Non, amet, aliquet scelerisque nullam sagittis, pulvinar. Fermentum scelerisque sit consectetur hac mi. Mollis leo eleifend ultricies purus aculis."
         primaryActionText="Primary Action"
@@ -205,6 +218,14 @@ export default function Home() {
         imagePosition="left"
         className="my-custom-class"
         useIconImage={true}
+      />
+      <Notification
+        id="unique-id-1"
+        message="This is a success message!"
+        type="success"
+        position="top-right"
+        duration={2000}
+        // onClose={() => setShowNotification(false)}
       />
     </main>
   );
