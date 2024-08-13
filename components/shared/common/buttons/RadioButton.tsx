@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import clsx from "clsx";
 import { twMerge } from "tailwind-merge";
-import { IconsCheck } from "@/components/icons";
+import { IconCheck } from "@/components/icons";
 
 type Props = React.InputHTMLAttributes<HTMLInputElement> & {
   label?: string | JSX.Element | undefined;
@@ -30,10 +30,10 @@ const Radio = (
           }
         )}
       >
-        {!routes && checked ? <IconsCheck width={18} height={18} /> : null}
+        {!routes && checked ? <IconCheck width={18} height={18} /> : null}
         {routes && checked ? (
           <span className="!text-white">
-            <IconsCheck width={18} height={18} />
+            <IconCheck width={18} height={18} />
           </span>
         ) : null}
       </span>
