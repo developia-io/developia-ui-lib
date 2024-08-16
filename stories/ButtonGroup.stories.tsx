@@ -18,21 +18,21 @@ const meta: Meta<typeof ButtonGroup> = {
       options: ["primary", "secondary", "custom"],
     },
     customBgColor: {
-      control: "color",
+      control: {type: 'color' },
     },
     customBorderColor: {
       control: "color",
     },
     customTextColor: {
-      control: "color",
+      control: {type: 'color' },
     },
     radius: {
-      control: "select",
+      control: "radio",
       options: ["square", "rounded"],
     },
     buttons: {
       control: "array",
-      defaultValue: ["Button 1", "Button 2"],
+      defaultValue: ["Button", "Button"],
     },
   },
   parameters: {
@@ -89,4 +89,17 @@ Link.args = {
   variant: "link",
   colorvariant: "primary",
   buttons: ["Link", "Link"], 
+};
+
+// CustomColor
+export const CustomColor: StoryObj<ButtonGroupProps> = Template.bind({});
+CustomColor.args = {
+  orientation: "horizontal",
+  variant: "filled",
+  colorvariant: "custom",
+  radius: "rounded",
+  spacing: "space-x-1",
+  buttons: ["Custom", "Custom"], 
+  customBgColor: "lightGray",
+  customBorderColor: "darkGray"
 };

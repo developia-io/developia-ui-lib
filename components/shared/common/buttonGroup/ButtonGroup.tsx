@@ -57,16 +57,12 @@ const ButtonGroup = ({
               // Variant-specific styles
               "bg-primary_80 text-helper_White border-primary_80": variant === "filled" && colorvariant === "primary",
               "bg-secondary_70 text-neutral_20 border-secondary_70": variant === "filled" && colorvariant === "secondary",
-              "bg-custom text-neutral_20 border-radius rounded py-1 px-3": variant === "filled" && colorvariant === "custom" && customBgColor,
               
               "border-primary_80 text-neutral_70": variant === "outlined" && colorvariant === "primary",
               "border-secondary_80 text-neutral_70": variant === "outlined" && colorvariant === "secondary",
-              "border-custom text-neutral_70": variant === "outlined" && colorvariant === "custom" && customBorderColor,
               
               "text-neutral_50": variant === "text" && colorvariant === "primary",
               "text-secondary_30": variant === "text" && colorvariant === "secondary",
-              "text-custom": variant === "text" && colorvariant === "custom" && customTextColor,
-
 
               "p-0 m-0 underline h-auto w-auto px-4": variant === "link",
               "text-primary_70": variant === "link" && colorvariant === "primary",
@@ -76,6 +72,11 @@ const ButtonGroup = ({
               "rounded-none": radius === "square",
             })
           )}
+          style={{
+            backgroundColor: colorvariant === "custom" && variant === "filled" ? customBgColor : undefined,
+            borderColor: colorvariant === "custom" && variant !== "text" ? customBorderColor : undefined,
+            color: colorvariant === "custom" ? customTextColor : undefined,
+          }}
         >
           {text}
         </button>
