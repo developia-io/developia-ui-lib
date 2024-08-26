@@ -34,6 +34,10 @@ const meta: Meta<typeof ButtonGroup> = {
       control: "array",
       defaultValue: ["Button", "Button"],
     },
+    spacing: {
+      control: "select",
+      options: ["space-1", "space-2", "space-4"], 
+    },
   },
   parameters: {
     docs: {
@@ -58,7 +62,7 @@ Filled.args = {
   variant: "filled",
   colorvariant: "primary",
   radius: "rounded",
-  spacing: "space-x-1",
+  spacing: "space-1",
   buttons: ["Filled", "Filled"], 
 };
 
@@ -69,7 +73,7 @@ Outlined.args = {
   variant: "outlined",
   colorvariant: "primary",
   radius: "rounded",
-  spacing: "space-x-1",
+  spacing: "space-1",
   buttons: ["Outlined", "Outlined"], 
 };
 
@@ -98,7 +102,7 @@ CustomColor.args = {
   variant: "filled",
   colorvariant: "custom",
   radius: "rounded",
-  spacing: "space-x-1",
+  spacing: "space-1",
   buttons: ["Custom", "Custom"], 
   customBgColor: "lightGray",
   customBorderColor: "darkGray"

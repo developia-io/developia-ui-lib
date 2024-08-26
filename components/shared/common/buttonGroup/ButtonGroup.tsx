@@ -7,8 +7,8 @@ export type ButtonGroupProps = React.HTMLProps<HTMLDivElement> & {
   as?: React.ElementType;
   buttons?: string[];
   orientation?: "horizontal" | "vertical";
-  spacing?: string;
-  variant?: "filled" | "text" | "outlined" | "link";
+  spacing?: "space-1" | "space-2" | "space-4"; 
+  variant?: "filled" | "text" | "outlined" | "link" ;
   colorvariant?: "primary" | "secondary" | "custom";
   prevIcon?: IImage;
   nextIcon?: IImage;
@@ -16,24 +16,28 @@ export type ButtonGroupProps = React.HTMLProps<HTMLDivElement> & {
   customBorderColor?: string;
   customTextColor?: string;
   radius?: "rounded" | "square";
+  size?: "small" | "medium" | "large";
 };
 
 const ButtonGroup = ({
   as: Cmp = "div", 
   buttons = ["Button", "Button"], 
   orientation = "horizontal",
-  spacing = "space-x-*", 
+  spacing = "space-1", 
   variant = "outlined",
   colorvariant = "primary",
   customBgColor,
   customBorderColor,
   customTextColor,
   radius = "square",
+  size = "medium",
   className,
   ...rest
 }: ButtonGroupProps) => {
 
-  const computedSpacing = orientation === "horizontal" ? spacing : spacing.replace("x-", "y-");
+  const validSpacing = orientation === "horizontal" 
+    ? spacing.replace("space-", "space-x-")
+    : spacing.replace("space-", "space-y-");
 
   return (
     <Cmp
@@ -43,7 +47,7 @@ const ButtonGroup = ({
         clsx({
           "flex-row": orientation === "horizontal",
           "flex-col items-start": orientation === "vertical",
-          [computedSpacing]: true,
+          [validSpacing]: true, 
         }),
         className
       )}
@@ -54,6 +58,9 @@ const ButtonGroup = ({
           className={twMerge(
             "h-10 px-6 py-2 my-1 border-[1.5px] flex items-center justify-center transition-colors duration-200 ease-in-out cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2",
             clsx("py-[11px] px-6 rounded font-semibold leading-none", {
+              "text-sm py-1 px-4": size === "small",
+              "text-base py-2 px-6": size === "medium",
+              "text-lg py-3 px-8": size === "large",
               // Variant-specific styles
               "bg-primary_80 text-helper_White border-primary_80 hover:bg-primary_70 hover:border-primary_70": variant === "filled" && colorvariant === "primary",
               "bg-secondary_70 text-neutral_20 border-secondary_70 hover:bg-secondary_60 hover:border-secondary_60": variant === "filled" && colorvariant === "secondary",
