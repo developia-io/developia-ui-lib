@@ -1,0 +1,68 @@
+import { Meta, Primary, Controls, Story, Source } from "@storybook/blocks";
+import * as AccordionStories from "./Accordion.stories";
+
+<Meta of={AccordionStories} />
+
+# Accordion
+
+The Accordion component displays collapsible content panels.
+
+<Primary />
+
+## Props
+
+<Controls />
+
+## Stories
+
+**Default Accordion:**
+
+<Story name="DefaultAccordion" of={AccordionStories.DefaultAccordion} parameters={{ args: {} }} />
+
+<Source name="DefaultAccordion" of={AccordionStories.DefaultAccordion} parameters={{ args: {} }} />
+
+**Multiple Open Allowed:**
+
+<Story name="MultipleOpenAllowed" of={AccordionStories.MultipleOpenAllowed} parameters={{ args: { allowMultipleOpen: true }}} />
+
+<Source name="MultipleOpenAllowed" of={AccordionStories.MultipleOpenAllowed} parameters={{ args: { allowMultipleOpen: true }}} />
+
+### Accordion with Icon Class
+
+A accordion with icon example.
+
+<Story name="IconAccordionClass" of={AccordionStories.IconAccordionClass} parameters={{ args: {} }} />
+
+<Source name="IconAccordionClass" of={AccordionStories.IconAccordionClass} parameters={{ args: {} }} />
+
+### Custom Accordion Class
+
+A custom-styled accordion example.
+
+<Story name="CustomAccordionClass" of={AccordionStories.CustomAccordionClass} parameters={{ args: {} }} />
+
+<Source name="CustomAccordionClass" of={AccordionStories.CustomAccordionClass} parameters={{ args: {} }} />
+
+### Custom Item Class
+
+An accordion with custom styles for items.
+
+<Story name="CustomItemClass" of={AccordionStories.CustomItemClass} parameters={{ args: {} }} />
+
+<Source name="CustomItemClass" of={AccordionStories.CustomItemClass} parameters={{ args: {} }} />
+
+### Custom Item and Accordion Class
+
+An accordion with both custom item and accordion styles.
+
+<Story name="CustomItemAndAccordionClass" of={AccordionStories.CustomItemAndAccordionClass} parameters={{ args: {} }} />
+
+<Source name="CustomItemAndAccordionClass" of={AccordionStories.CustomItemAndAccordionClass} parameters={{ args: {} }} />
+
+### Long Content
+
+An example with long content in the accordion item.
+
+<Story name="WithLongContent" of={AccordionStories.WithLongContent} parameters={{ args: {} }} />
+
+<Source name="WithLongContent" of={AccordionStories.WithLongContent} parameters={{ args: {} }} />
