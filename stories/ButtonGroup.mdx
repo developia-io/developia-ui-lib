@@ -1,0 +1,54 @@
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Source,
+  Canvas,
+} from "@storybook/blocks";
+
+import * as ButtonGroupStories from "./ButtonGroup.stories";
+
+<Meta of={ButtonGroupStories} />
+
+# ButtonGroup
+
+The `ButtonGroup` component is a versatile container for arranging buttons. It supports various orientations, variants, color schemes, and customizable styles.
+
+<Primary />
+
+## Props
+
+<Controls />
+
+## Stories
+
+### Filled Button Group
+
+This story showcases a `ButtonGroup` with the filled variant.
+
+<Canvas withSource="open" of={ButtonGroupStories.Filled} />
+
+### Outlined Button Group
+
+This story showcases a `ButtonGroup` with the outlined variant.
+
+<Canvas withSource="open" of={ButtonGroupStories.Outlined} />
+
+### Text Button Group
+
+This story showcases a `ButtonGroup` with the text variant.
+
+<Canvas withSource="open" of={ButtonGroupStories.Text} />
+
+### Link Button Group
+
+This story showcases a `ButtonGroup` with the link variant.
+
+<Canvas withSource="open" of={ButtonGroupStories.Link} />
+
+### Custom Color Button Group
+
+This story showcases a `ButtonGroup` with custom colors using the `customBgColor`, `customBorderColor`, and `customTextColor` props.
+
+<Canvas withSource="open" of={ButtonGroupStories.CustomColor} />

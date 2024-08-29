@@ -1,0 +1,72 @@
+import {
+  Meta,
+  Primary,
+  Controls,
+  Story,
+  Source,
+  Canvas,
+} from "@storybook/blocks";
+
+import * as NotificationStories from "./Notification.stories";
+
+<Meta of={NotificationStories} />
+
+# Notification
+
+The `Notification` component is a versatile container for displaying content. It supports different variants, customizations, and layouts.
+
+<Primary />
+
+## Props
+
+<Controls />
+
+## Stories
+
+### Success Notification
+
+This story showcases a `Notification` with a success variant.
+
+<Canvas withSource="open" of={NotificationStories.Success} />
+
+### Error Notification
+
+This story showcases a `Notification` with an error variant.
+
+<Canvas withSource="open" of={NotificationStories.Error} />
+
+### Info Notification
+
+This story showcases a `Notification` with an info variant.
+
+<Canvas withSource="open" of={NotificationStories.Info} />
+
+### Warning Notification
+
+This story showcases a `Notification` with a warning variant.
+
+<Canvas withSource="open" of={NotificationStories.Warning} />
+
+### Custom Color Notification
+
+This story showcases a `Notification` with a custom color variant.
+
+<Canvas withSource="open" of={NotificationStories.CustomColor} />
+
+### Notification Without Close Button
+
+This story showcases a `Notification` without a close button.
+
+<Canvas withSource="open" of={NotificationStories.WithoutCloseButton} />
+
+### Outlined Notification
+
+This story showcases an outlined `Notification`.
+
+<Canvas withSource="open" of={NotificationStories.Outlined} />
+
+### Transparent Notification
+
+This story showcases a transparent `Notification`.
+
+<Canvas withSource="open" of={NotificationStories.Transparent} />
