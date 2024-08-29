@@ -16,16 +16,17 @@ const Header = ({
   navList,
   actions,
   children,
-  logoPosition = 'left',
+  logoPosition = 'right',
 }: HeaderProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="w-full px-4 py-2 flex items-center justify-between bg-white shadow-md relative z-10 md:flex-row md:items-center">
+    <header className="w-full px-4 py-2 flex items-center justify-between bg-white shadow-md relative z-10 gap-2.5 md:flex-row md:items-center">
       {logoPosition === 'left' && (
         <>
-          <div className="flex items-center w-full md:w-auto">
-            {logo ? logo : <img src={IconHeaderLogo} alt="Logo" className="w-12 h-12" />}
+          <div className="flex items-center w-full md:w-auto justify-between">
+            {logo ? logo : <IconHeaderLogo 
+             className="w-13 h-13" />}
           </div>
           <div className="hidden md:flex flex-1 justify-between">
             <nav className="flex items-center space-x-4">{navList}</nav>
@@ -39,7 +40,8 @@ const Header = ({
             <nav className="flex items-center space-x-4">{navList}</nav>
           </div>
           <div className="flex items-center w-full md:w-auto justify-center">
-            {logo ? logo : <img src={IconHeaderLogo} alt="Logo" className="w-12 h-12" />}
+          {logo ? logo : <IconHeaderLogo 
+             className="w-13 h-13" />}
           </div>
           <div className="hidden md:flex flex-1 justify-end">
             <div className="flex items-center space-x-4">{actions}</div>
@@ -52,8 +54,9 @@ const Header = ({
             <nav className="flex items-center space-x-4">{navList}</nav>
             <div className="flex items-center space-x-4">{actions}</div>
           </div>
-          <div className="flex items-center w-full md:w-auto ml-4 justify-end">
-            {logo ? logo : <img src={IconHeaderLogo} alt="Logo" className="w-12 h-12" />}
+          <div className="flex items-center w-full md:w-auto justify-end">
+          {logo ? logo : <IconHeaderLogo 
+             className="w-13 h-13" />}
           </div>
         </>
       )}
