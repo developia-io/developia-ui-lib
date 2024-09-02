@@ -1,9 +1,13 @@
 import { Meta, StoryObj } from "@storybook/react";
 import ButtonGroup, { ButtonGroupProps } from "@/components/shared/common/buttonGroup/ButtonGroup";
+import RadioButtonGroup from "@/components/shared/common/buttonGroup/RadioButtonGroup"; 
+import CheckboxButtonGroup from "@/components/shared/common/buttonGroup/CheckboxButtonGroup"; 
+
 
 const meta: Meta<typeof ButtonGroup> = {
   title: "Components/Button Group",
   component: ButtonGroup,
+  subcomponents: { RadioButtonGroup, CheckboxButtonGroup },
   argTypes: {
     orientation: {
       control: "select",
@@ -11,8 +15,8 @@ const meta: Meta<typeof ButtonGroup> = {
     },
     variant: {
       control: "select",
-      options: ["filled", "text", "outlined", "link"],
-    },
+      options: ["filled",  "outlined", "text", "link"],
+    }, 
     colorvariant: {
       control: "radio",
       options: ["primary", "secondary", "custom"],
@@ -36,7 +40,13 @@ const meta: Meta<typeof ButtonGroup> = {
     },
     spacing: {
       control: "select",
-      options: ["space-1", "space-2", "space-4"], 
+      options: ["space-0", "space-1", "space-2", "space-4"], 
+    },
+    prevIcon: {
+      control: "object",
+    },
+    nextIcon: {
+      control: "object",
     },
   },
   parameters: {
@@ -106,4 +116,44 @@ CustomColor.args = {
   buttons: ["Custom", "Custom"], 
   customBgColor: "lightGray",
   customBorderColor: "darkGray"
+};
+
+
+// Radio
+export const RadioGroup: StoryObj<ButtonGroupProps> = (args) => (
+  <RadioButtonGroup {...args} />
+);
+RadioGroup.args = {
+  orientation: "vertical",
+  buttons: ["Option 1", "Option 2", "Option 3"],
+  colorvariant: "custom",
+};
+RadioGroup.argTypes = {
+  variant: { table: { disable: true } },
+  customBgColor: { table: { disable: true } },
+  customBorderColor: { table: { disable: true } },
+  prevIcon: { table: { disable: true}},
+  nextIcon: { table: { disable: true}},
+  spacing:  { table: { disable: true}},
+  radius:  { table: { disable: true}},
+  size: { table: { disable:true}}
+};
+
+// Checkbox
+export const CheckboxGroup: StoryObj<ButtonGroupProps> = (args) => (
+  <CheckboxButtonGroup {...args} />
+);
+CheckboxGroup.args = {
+  orientation: "vertical",
+  buttons: ["Checkbox 1", "Checkbox 2", "Checkbox 3"],
+};
+CheckboxGroup.argTypes = {
+  variant: { table: { disable: true } },
+  customBgColor: { table: { disable: true } },
+  customBorderColor: { table: { disable: true } },
+  prevIcon: { table: { disable: true}},
+  nextIcon: { table: { disable: true}},
+  spacing:  { table: { disable: true}},
+  radius:  { table: { disable: true}},
+  size: { table: { disable:true}}
 };

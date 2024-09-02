@@ -46,6 +46,12 @@ module.exports = {
         helper_White: "#FFFFFF",
         helper_Black: "#000000",
       },
+      spacing: {
+        'space-0': '0px',
+        'space-1': '4px',
+        'space-2': '8px',
+        'space-4': '16px',
+      },
     },
   },
   plugins: [],
