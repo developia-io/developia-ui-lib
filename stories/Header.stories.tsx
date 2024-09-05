@@ -52,7 +52,7 @@ type Story = StoryObj<HeaderProps>;
 export const LogoLeft: Story = {
   args: {
     logoPosition: "left",
-    logo: <img src="/logo.svg" alt="Logo" className="w-12 h-12" />,
+    logo: <img src="/IconHeaderLogo.svg" alt="Logo" className="w-12 h-12" />,
     navList: (
       <>
         <a href="#home" className="text-neutral_80">Home</a>
@@ -72,7 +72,7 @@ export const LogoLeft: Story = {
 export const LogoCenter: Story = {
   args: {
     logoPosition: "center",
-    logo: <img src="/logo.svg" alt="Logo" className="w-12 h-12" />,
+    logo: <img src="/IconHeaderLogo.svg" alt="Logo" className="w-12 h-12" />,
     navList: (
       <>
         <a href="#home" className="text-neutral_80">Home</a>
@@ -92,7 +92,7 @@ export const LogoCenter: Story = {
 export const LogoRight: Story = {
   args: {
     logoPosition: "right",
-    logo: <img src="/logo.svg" alt="Logo" className="w-12 h-12" />,
+    logo: <img src="/IconHeaderLogo.svg" alt="Logo" className="w-12 h-12" />,
     navList: (
       <>
         <a href="#home" className="text-neutral_80">Home</a>
@@ -112,7 +112,7 @@ export const LogoRight: Story = {
 export const WithActions: Story = {
   args: {
     logoPosition: "left",
-    logo: <img src="/logo.svg" alt="Logo" className="w-12 h-12" />,
+    logo: <img src="/IconHeaderLogo.svg" alt="Logo" className="w-12 h-12" />,
     navList: (
       <>
         <a href="#home" className="text-neutral_80">Home</a>
@@ -133,7 +133,7 @@ export const WithActions: Story = {
 export const MobileMenu: Story = {
   args: {
     logoPosition: "left",
-    logo: <img src="/logo.svg" alt="Logo" className="w-12 h-12" />,
+    logo: <img src="/IconHeaderLogo.svg" alt="Logo" className="w-12 h-12" />,
     navList: (
       <>
         <a href="#home" className="text-neutral_80">Home</a>
